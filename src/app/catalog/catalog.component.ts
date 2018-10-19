@@ -55,11 +55,15 @@ export class CatalogComponent {
     if (!filter) return (this.visibleClasses = this.classes);
 
     if (filter === 'GEN') {
-      return (this.visibleClasses = this.classes.filter(
-        c => !c.course.courseNumber.startsWith('CH') && !c.course.courseNumber.startsWith('PO') && !c.course.courseNumber.startsWith('SP')
-      ));
+      return this.showOnlyGeneralCourses();
     }
 
     return (this.visibleClasses = this.classes.filter(c => c.course.courseNumber.startsWith(filter)));
+  }
+
+  showOnlyGeneralCourses() {
+    this.visibleClasses = this.classes.filter(
+      c => !c.course.courseNumber.startsWith('CH') && !c.course.courseNumber.startsWith('PO') && !c.course.courseNumber.startsWith('SP')
+    );
   }
 }
