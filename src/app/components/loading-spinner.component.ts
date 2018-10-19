@@ -7,6 +7,6 @@ import { Component } from '@angular/core';
   // tslint:disable-next-line:use-input-property-decorator
   inputs: ['loading']
 })
-export class LoadingComponent {
+export class LoadingSpinnerComponent {
   loading: boolean;
 }

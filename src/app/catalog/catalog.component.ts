@@ -10,7 +10,7 @@ export class CatalogComponent {
   classes: any[];
   visibleClasses: any[];
 
-  constructor(private userRepository: UserRepositoryService, private catRepo: CatalogRepositoryService) {}
+  constructor(public userRepository: UserRepositoryService, private catRepo: CatalogRepositoryService) {}
 
   // tslint:disable-next-line:use-life-cycle-interface
   ngOnInit() {

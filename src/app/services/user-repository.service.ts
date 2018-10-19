@@ -57,7 +57,7 @@ export class UserRepositoryService {
   }
 }
 
-const USERS = [
+const users = [
   {
     userId: 'e61aebed-dbc5-437a-b514-02b8380d8efc',
     firstName: 'Jim',
