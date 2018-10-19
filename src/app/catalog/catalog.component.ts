@@ -58,4 +58,12 @@ export class CatalogComponent implements OnInit {
       }
     );
   }
+
+  mutateFirstProfessor() {
+    this.visibleClasses[0].professor = 'Zebraman';
+  }
+
+  updateFirstProfessor() {
+    this.visibleClasses = [Object.assign(this.visibleClasses[0], { professor: 'Zebraman' }), ...this.visibleClasses.slice(1)];
+  }
 }
