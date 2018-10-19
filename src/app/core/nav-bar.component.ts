@@ -4,7 +4,7 @@ import { UserRepositoryService } from './user-repository.service';
 
 @Component({
   // tslint:disable-next-line:component-selector
-  selector: 'nav-bar',
+  selector: 'wb-nav-bar',
   styleUrls: [`./nav-bar.component.css`],
   template: `
     <div class="nav-bar">
