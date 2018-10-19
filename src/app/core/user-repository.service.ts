@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Observable, Subject } from 'rxjs/Rx';
-import 'rxjs/add/operator/map';
+import { Observable } from 'rxjs/Observable';
+import { of } from 'rxjs/observable/of';
+import { delay } from 'rxjs/operators';
 
 @Injectable()
 export class UserRepositoryService {
@@ -14,7 +15,7 @@ export class UserRepositoryService {
     // this.currentUser = user;
     this.currentUser = Object.assign({}, user, { classes: user.classes || [] });
 
-    return Observable.empty().delay(1000);
+    return of([]).pipe(delay(1000));
   }
 
   enroll(classId): Observable<any> {
@@ -28,7 +29,7 @@ export class UserRepositoryService {
     // this.currentUser.classes.push(classId);
     this.currentUser = Object.assign({}, this.currentUser, { classes: this.currentUser.classes.concat([classId]) });
 
-    return Observable.empty().delay(1000);
+    return of([]).pipe(delay(1000));
   }
 
   drop(classId): Observable<any> {
@@ -42,7 +43,7 @@ export class UserRepositoryService {
     // this.currentUser.classes = this.currentUser.classes.filter(c => c.classId !== classId);
     this.currentUser = Object.assign({}, this.currentUser, { classes: this.currentUser.classes.filter(c => c.classId !== classId) });
 
-    return Observable.empty().delay(1000);
+    return of([]).pipe(delay(1000));
   }
 
   signIn(credentials): Observable<any> {
@@ -59,7 +60,7 @@ export class UserRepositoryService {
       classes: ['24ab7b14-f935-44c1-b91b-8598123ea54a']
     };
 
-    return Observable.empty();
+    return of([]);
   }
 }
 
