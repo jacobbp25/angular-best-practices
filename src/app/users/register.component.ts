@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
-import { DataRepositoryService } from '../services/data-repository.service';
+import { UserRepositoryService } from '../services/user-repository.service';
 
 @Component({
   styleUrls: ['./register.component.css'],
@@ -16,7 +16,7 @@ export class RegisterComponent {
   password: FormControl;
   saving = false;
 
-  constructor(private router: Router, private dataRepository: DataRepositoryService) {}
+  constructor(private router: Router, private userRepository: UserRepositoryService) {}
 
   // tslint:disable-next-line:use-life-cycle-interface
   ngOnInit() {
@@ -35,7 +35,7 @@ export class RegisterComponent {
 
   registerUser(user) {
     this.saving = true;
-    this.dataRepository.saveUser(user).subscribe(null, () => (this.saving = false), () => this.router.navigate(['/catalog']));
+    this.userRepository.saveUser(user).subscribe(null, () => (this.saving = false), () => this.router.navigate(['/catalog']));
   }
 
   cancel() {
