@@ -1,23 +1,26 @@
 import { Component } from '@angular/core';
 
 @Component({
-    selector: 'my-app',
-    styles: [`
+  // tslint:disable-next-line:component-selector
+  selector: 'my-app',
+  styles: [
+    `
       .app {
         width: 1000px;
         margin: auto;
       }
       .main {
-        background-color:white;      
+        background-color: white;
       }
-    `],
-    template: `
+    `
+  ],
+  template: `
       <div class="app">
         <nav-bar></nav-bar>
         <div class="main">
           <router-outlet></router-outlet>
         </div>
       </div>
-    `,
+    `
 })
-export class AppComponent  {  }
+export class AppComponent {}
