@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { UserRepositoryService } from '../services/user-repository.service';
+import { UserRepositoryService } from '../core/user-repository.service';
 import { CatalogRepositoryService } from './catalog-repository.service';
 @Component({
   styleUrls: ['./catalog.component.css'],
